@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterCli/TwitterClient.swift"
+            timestampString = "477708728.698385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "handleOpenUrl(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterCli.TwitterClient.(handleOpenUrl (TwitterCli.TwitterClient) -&gt; (__ObjC.NSURL) -&gt; ()).(closure #1)"
+                  moduleName = "TwitterCli"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/clayton/Documents/Git/Twitter/TwitterCli/TwitterCli/TwitterClient.swift"
+                  timestampString = "477704891.634419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TwitterCli.TwitterClient.(handleOpenUrl (TwitterCli.TwitterClient) -&gt; (__ObjC.NSURL) -&gt; ()).(closure #2)"
+                  moduleName = "TwitterCli"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/clayton/Documents/Git/Twitter/TwitterCli/TwitterCli/TwitterClient.swift"
+                  timestampString = "477704891.634638"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterCli/TweetCell.swift"
+            timestampString = "477713742.294679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "TweetCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
