@@ -88,4 +88,50 @@ class TwitterClient: BDBOAuth1SessionManager {
                 failure(error)
         })
     }
+    
+    func retweet(id: Int){
+        POST("https://api.twitter.com/1.1/favorites/create.json?id=\(id)", parameters: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                print("SuccesS!!!!!@!#!@#!@#!@# RETWEET")
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("darn")
+        }
+    }
+    
+    func favorite(id: Int){
+        POST("https://api.twitter.com/1.1/statuses/retweet/\(id).json", parameters: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                print("SuccesS!!!!!@!#!@#!@#!@# FAVORITE")
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("darn")
+        }       
+    }
+    
+    func getUser(screenName: String, success: (NSDictionary) -> ()) {
+        GET("https://api.twitter.com/1.1/users/show.json?screen_name=\(screenName)", parameters: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let userDictionary = response as? NSDictionary
+            
+            success(userDictionary!)
+            
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Error getting clicked user")
+        })
+    }
+    
+    func tweety(tweet: String){
+        let params: [String:String] = ["status": tweet]
+        POST("https://api.twitter.com/1.1/statuses/update.json", parameters: params, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                print("SuccesS!!!!!@!#!@#!@#!@# TWEETETETET")
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("bummer")
+        }
+    }
+    func tweetRespond(tweet: String, id: Int){
+        let params: [String:String] = ["status": tweet, "in_reply_to_status_id": "\(id)"]
+        POST("https://api.twitter.com/1.1/statuses/update.json", parameters: params, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            print("SuccesS!!!!!@!#!@#!@#!@# TWEETETETET")
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("bummer")
+        }
+    }
+    
 }

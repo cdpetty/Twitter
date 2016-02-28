@@ -16,6 +16,7 @@ class Tweet: NSObject {
     var retweetCount: Int = 0
     var favoritesCount: Int = 0
     var profileImageUrl: NSURL?
+    var id: Int = 0
     
     init(dictionary: NSDictionary) {
         // Get tweet text
@@ -46,6 +47,7 @@ class Tweet: NSObject {
         } else {
             profileImageUrl = nil
         }
+        id = dictionary["id"] as! Int
         
     }
     

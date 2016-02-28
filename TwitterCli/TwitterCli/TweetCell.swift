@@ -17,6 +17,8 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var formattedTime: NSString!
+    
     func convertTimeToString(number: Int) -> String{
         let day = number / 86400
         let hour = (number - (day * 86400)) / 3600
@@ -39,7 +41,8 @@ class TweetCell: UITableViewCell {
             }
             
 //            timestampLabel.text = "Friday"
-            timestampLabel.text = convertTimeToString(Int(NSDate().timeIntervalSinceDate(tweet.timestamp!)))
+            formattedTime = convertTimeToString(Int(NSDate().timeIntervalSinceDate(tweet.timestamp!)))
+            timestampLabel.text = "\(formattedTime)"
             retweetButton.setTitle("RT: \(tweet.retweetCount)", forState: .Normal)
             favoriteButton.setTitle("FAV: \(tweet.favoritesCount)", forState: .Normal)
             bodyLabel.text = tweet.text! as String

@@ -62,6 +62,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    
     @IBAction func FavPressed(sender: AnyObject) {
         
         let button = sender as! UIButton
@@ -69,6 +70,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = view.superview as! TweetCell
         cell.tweet.favoritesCount++
         button.setTitle("FAV: \(cell.tweet.favoritesCount)", forState: .Normal)
+        TwitterClient.sharedInstance.favorite(cell.tweet.id)
     }
     
     @IBAction func retweetPressed(sender: AnyObject) {
@@ -77,15 +79,44 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = view.superview as! TweetCell
         cell.tweet.retweetCount++
         button.setTitle("RT: \(cell.tweet.retweetCount)", forState: .Normal)
+        TwitterClient.sharedInstance.retweet(cell.tweet.id)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        switch (sender){
+            case is UIButton:
+                print("was a button")
+                let button = sender as! UIButton
+                let view = button.superview!
+                let cell = view.superview as! TweetCell
+                let indexPath = tableView.indexPathForCell(cell)
+                
+                let tweet = tweets[indexPath!.row]
+                
+                let profileViewController = segue.destinationViewController as! ProfileViewController
+                profileViewController.screenName = tweet.screenName
+                break
+            
+            case is UITableViewCell:
+                print("was a table cell")
+                let cell = sender as! TweetCell
+                let indexPath = tableView.indexPathForCell(cell)
+                
+                let tweet = tweets[indexPath!.row]
+                
+                let tweetViewController = segue.destinationViewController as! TweetViewController
+                tweetViewController.tweet = tweet
+                tweetViewController.time = cell.formattedTime
+                break
+            default:
+                print("uhoh")
+        }
+       
     }
-    */
+    
+    // MARK: - Navigation
+
 
 }
